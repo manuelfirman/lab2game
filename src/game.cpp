@@ -11,7 +11,7 @@ void Game::iniciarVariables()
 
     _textura.loadFromFile("clothes.png");
     _sprite.setTexture(_textura);
-    animacion = new Animacion(&_textura, sf::Vector2u(32,8), 0.05f);
+    animacion = new Animacion(&_textura, sf::Vector2u(32,8), 0.1f);
 }
 
 void Game::iniciarVentana()
@@ -53,6 +53,7 @@ void Game::actualizar()
 {
     this->actualizarEventos();
     animacion->actualizar(1, _deltaTime);
+    _sprite.setTextureRect(animacion->_rect);
 }
 
 

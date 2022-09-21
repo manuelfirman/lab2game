@@ -2,7 +2,7 @@
 1663720173 source:d:\documentos\programacion\proyectolaboratorio2\main.cpp
 	"game.h"
 
-1663722224 d:\documentos\programacion\proyectolaboratorio2\include\game.h
+1663726325 d:\documentos\programacion\proyectolaboratorio2\include\game.h
 	<SFML/Graphics.hpp>
 	"animacion.h"
 
@@ -415,19 +415,19 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1663722788 source:d:\documentos\programacion\proyectolaboratorio2\src\game.cpp
+1663726112 source:d:\documentos\programacion\proyectolaboratorio2\src\game.cpp
 	"game.h"
 
 1663722504 source:d:\documentos\programacion\proyectolaboratorio2\src\animacion.cpp
 	"animacion.h"
 
-1663721654 d:\documentos\programacion\proyectolaboratorio2\include\animacion.h
+1663726324 d:\documentos\programacion\proyectolaboratorio2\include\animacion.h
 	<SFML/Graphics.hpp>
 	<iostream>
 
 1663722094 source:d:\documentos\programacion\proyectolaboratorio2\src\player.cpp
 	"player.h"
 
-1663722059 d:\documentos\programacion\proyectolaboratorio2\include\player.h
+1663726296 d:\documentos\programacion\proyectolaboratorio2\include\player.h
 	<SFML\Graphics.hpp>
 

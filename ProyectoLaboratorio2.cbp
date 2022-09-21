@@ -52,9 +52,13 @@
 			<Add option="-std=c++14" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/animacion.h" />
 		<Unit filename="include/game.h" />
+		<Unit filename="include/player.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/animacion.cpp" />
 		<Unit filename="src/game.cpp" />
+		<Unit filename="src/player.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
