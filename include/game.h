@@ -1,36 +1,34 @@
 #ifndef GAME_H
 #define GAME_H
-#include <SFML/Graphics.hpp>
-#include "animacion.h"
-class Game
-{
-    private:
-        sf::RenderWindow* _ventana;
-        sf::VideoMode _modoVideo;
-        sf::Event _evento;
-        int _fps;
 
-        sf::Texture _textura;
-        sf::Sprite _sprite;
+#include "Ventana.h"
 
-        sf::Clock relojDelta;
-        float _deltaTime;
+class Game{
+private:
 
-        Animacion* animacion;
-    private:
-        void iniciarVariables();
-        void iniciarVentana();
+	Ventana _ventana;
+	sf::Clock _clock;
+	sf::Time _elapsed;
 
-    public:
-        Game();
-        ~Game();
+	sf::Texture m_mushroomTexture;
+	sf::Sprite m_mushroom;
+	sf::Vector2i m_increment;
 
-        void actualizarEventos();
-        void actualizarDeltaTime();
-        void actualizar();
-        void renderizar();
-        void gameloop();
-        void finAplicacion();
+private:
+	void MoveMushroom();
+
+public:
+	Game();
+	~Game();
+
+	void HandleInput();
+	void actualizar();
+	void renderizar();
+
+	Ventana* GetVentana();
+
+	sf::Time GetElapsed();
+	void RestartClock();
 };
 
 #endif // GAME_H

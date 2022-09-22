@@ -1,10 +1,9 @@
 # depslib dependency file v1.0
-1663720173 source:d:\documentos\programacion\proyectolaboratorio2\main.cpp
+1663828201 source:d:\documentos\programacion\proyectolaboratorio2\main.cpp
 	"game.h"
 
-1663726325 d:\documentos\programacion\proyectolaboratorio2\include\game.h
-	<SFML/Graphics.hpp>
-	"animacion.h"
+1663828105 d:\documentos\programacion\proyectolaboratorio2\include\game.h
+	"Ventana.h"
 
 1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -415,7 +414,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1663726112 source:d:\documentos\programacion\proyectolaboratorio2\src\game.cpp
+1663827700 source:d:\documentos\programacion\proyectolaboratorio2\src\game.cpp
 	"game.h"
 
 1663722504 source:d:\documentos\programacion\proyectolaboratorio2\src\animacion.cpp
@@ -430,4 +429,12 @@
 
 1663726296 d:\documentos\programacion\proyectolaboratorio2\include\player.h
 	<SFML\Graphics.hpp>
+
+1663828071 d:\documentos\programacion\proyectolaboratorio2\include\ventana.h
+	<string>
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+
+1663827625 source:d:\documentos\programacion\proyectolaboratorio2\src\ventana.cpp
+	"ventana.h"
 

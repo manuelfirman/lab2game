@@ -4,7 +4,11 @@ int main()
 {
     Game game;
 
-    game.gameloop();
-
+    while(!game.GetVentana()->Ok()){
+        game.HandleInput();
+        game.actualizar();
+        game.renderizar();
+        game.RestartClock();
+    }
     return 0;
 }

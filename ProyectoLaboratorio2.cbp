@@ -39,9 +39,14 @@
 					<Add option="-Wall" />
 					<Add option="-std=c++14" />
 					<Add directory="include" />
+					<Add directory="SFML/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="sfml-system" />
+					<Add library="sfml-graphics" />
+					<Add library="sfml-window" />
+					<Add directory="SFML/lib" />
 				</Linker>
 			</Target>
 		</Build>
@@ -55,10 +60,12 @@
 		<Unit filename="include/animacion.h" />
 		<Unit filename="include/game.h" />
 		<Unit filename="include/player.h" />
+		<Unit filename="include/ventana.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/animacion.cpp" />
 		<Unit filename="src/game.cpp" />
 		<Unit filename="src/player.cpp" />
+		<Unit filename="src/ventana.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
