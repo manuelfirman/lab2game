@@ -1,34 +1,28 @@
 #ifndef GAME_H
 #define GAME_H
-
-#include "Ventana.h"
+#include "Estado_Base.h"
 
 class Game{
 private:
 
-	Ventana _ventana;
-	sf::Clock _clock;
-	sf::Time _elapsed;
+	sf::RenderWindow* _ventana; // memoria dinamica
+	sf::Event sfEvento;
 
-	sf::Texture m_mushroomTexture;
-	sf::Sprite m_mushroom;
-	sf::Vector2i m_increment;
+	sf::Clock relojDt;
+	float _DT;
 
 private:
-	void MoveMushroom();
+    void iniciarVariables();
+    void iniciarVentana();
 
 public:
 	Game();
 	~Game();
-
-	void HandleInput();
+    void actualizarDT();
+	void actualizarEventosSFML();
 	void actualizar();
 	void renderizar();
-
-	Ventana* GetVentana();
-
-	sf::Time GetElapsed();
-	void RestartClock();
+	void gameloop();
 };
 
 #endif // GAME_H
