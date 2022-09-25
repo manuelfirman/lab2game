@@ -4,6 +4,7 @@ void Game::iniciarVariables()
 {
     _ventana = NULL;
     _DT = 0.f;
+    _fullscreen = false;
 
 }
 

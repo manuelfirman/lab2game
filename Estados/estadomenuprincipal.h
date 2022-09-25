@@ -2,19 +2,22 @@
 #define ESTADOMENUPRINCIPAL_H
 #include "estadobase.h"
 #include "estadojuego.h"
-#include "boton.h"
+#include "../Utilidades/boton.h"
 
 class EstadoMenuPrincipal : public EstadoBase
 {
-    private: // Variables
+    private: // Atributos
+        sf::Texture _texturaFondoMenu;
         sf::RectangleShape _fondoMenu;
         sf::Font _fuenteMenu;
         sf::Font _fuenteBoton;
 
         std::map<std::string, Boton*> _boton;
 
-    private: // Funciones
+    private: // Metodos
+        void iniciarVariables();
         void iniciarKeybinds();
+        void iniciarFondo();
         void iniciarFuentes();
         void iniciarBotones();
 
@@ -25,7 +28,6 @@ class EstadoMenuPrincipal : public EstadoBase
         void actualizarBotones();
         void renderBotones(sf::RenderTarget* target);
 
-        void finEstado();
 
         void actualizarInput(const float& DT);
         void actualizar(const float& DT);

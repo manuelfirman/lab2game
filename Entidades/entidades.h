@@ -1,35 +1,33 @@
 #ifndef ENTIDADES_H
 #define ENTIDADES_H
 
-#include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Audio.hpp>
-
-#include <vector>
-#include <stack>
-#include <map>
-#include <ctime>
-#include <cstdlib>
-#include <iostream>
-
-#include <fstream>
+#include "movimiento.h"
 
 class Entidades
 {
-    private:
+    private: // Metodos
+        void iniciarVariables();
 
-    protected:
-        sf::RectangleShape _shape;
-        float _velocidad;
+
+
+    protected: // Atributos
+        sf::Texture* _textura; // puntero para no duplicar la textura
+        sf::Sprite* _sprite;
+
+        Movimiento* movimiento;
+
 
 
     public:
         Entidades();
         virtual ~Entidades();
+        // Funciones de componentes
+        void crearSprite(sf::Texture* textura);
+        void crearComponenteMovimiento(const float velocidadMaxima);
 
+        /// Overriders
+        virtual void setPosicion(const float x, const float y);
         virtual void mover(const float& DT, const float x, const float y);
-
         virtual void actualizar(const float& DT);
         virtual void renderizar(sf::RenderTarget* target);
 };

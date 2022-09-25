@@ -5,7 +5,7 @@
 #include "estadomenuprincipal.h"
 
 class Game{
-private: // Variables
+private: // Atributos
 
 	sf::RenderWindow* _ventana; // memoria dinamica
 	sf::Event sfEvento;
@@ -19,7 +19,7 @@ private: // Variables
 	std::stack<EstadoBase*> _estado;
 	std::map<std::string, int> _teclasSoportadas;
 
-private: // Funciones
+private: // Metodos
     void iniciarVariables();
     void iniciarVentana();
     void iniciarEstados();

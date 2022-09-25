@@ -1,5 +1,11 @@
 #include "estadomenuprincipal.h"
+#include <sstream>
 /// --------------------- INICIALIZACIONES --------------------------
+void EstadoMenuPrincipal::iniciarVariables()
+{
+
+}
+
 void EstadoMenuPrincipal::iniciarKeybinds()
 {
     std::ifstream archivo("config/teclas_menuprincipal.ini");
@@ -13,12 +19,22 @@ void EstadoMenuPrincipal::iniciarKeybinds()
         }
     }
 }
+
+void EstadoMenuPrincipal::iniciarFondo()
+{
+    if(!_texturaFondoMenu.loadFromFile("recursos/img/fondos/fondo_menu.jpg"))
+        std::cout << "ERROR:iniciarFondo_EstadoMenuPrincipal_CargarTexturaMenu" << std::endl;
+
+    _fondoMenu.setSize(sf::Vector2f(static_cast<float>(_ventana->getSize().x), static_cast<float>(_ventana->getSize().y)));
+    _fondoMenu.setTexture(&_texturaFondoMenu);
+}
+
 void EstadoMenuPrincipal::iniciarFuentes()
 {
-    if(!_fuenteMenu.loadFromFile("fuentes/Bungee-Regular.ttf")){
+    if(!_fuenteMenu.loadFromFile("recursos/fuentes/Bungee-Regular.ttf")){
         std::cout << "ERROR:CargarFuente_MenuPrincipal" << std::endl;
     }
-    if(!_fuenteBoton.loadFromFile("fuentes/Bungee-Regular.ttf")){
+    if(!_fuenteBoton.loadFromFile("recursos/fuentes/Bungee-Regular.ttf")){
         std::cout << "ERROR:CargarFuente_MenuPrincipal_Botones" << std::endl;
     }
 }
@@ -41,9 +57,9 @@ void EstadoMenuPrincipal::iniciarBotones()
 /// --------------------- CONSTRUCTOR / DESTRUCTOR ---------------------
 EstadoMenuPrincipal::EstadoMenuPrincipal(sf::RenderWindow* ventana, std::map<std::string, int>* teclasSoportadas, std::stack<EstadoBase*>* estado) : EstadoBase(ventana, teclasSoportadas, estado)
 {
+    this->iniciarVariables();
     this->iniciarKeybinds();
-    _fondoMenu.setSize(sf::Vector2f(_ventana->getSize().x, _ventana->getSize().y));
-    _fondoMenu.setFillColor(sf::Color::Magenta);
+    this->iniciarFondo();
     this->iniciarFuentes();
     this->iniciarBotones();
 
@@ -57,16 +73,10 @@ EstadoMenuPrincipal::~EstadoMenuPrincipal()
     }
 }
 
-void EstadoMenuPrincipal::finEstado()
-{
-    std::cout << "Fin de Estado Menu Principal" << std::endl;
-}
-
 
 /// --------------------- ACTUALIZACIONES --------------------------
 void EstadoMenuPrincipal::actualizarInput(const float& DT)
 {
-    checkSalir();
 
 
 }
@@ -82,12 +92,12 @@ void EstadoMenuPrincipal::actualizarBotones()
 
     if(_boton["ESTADO_CARGAR"]->getClick());
 
+
     if(_boton["ESTADO_OPCIONES"]->getClick());
 
 
-
     if(_boton["ESTADO_SALIR"]->getClick())
-        _salir = true;
+        finEstado();
 
 }
 
@@ -117,4 +127,19 @@ void EstadoMenuPrincipal::renderizar(sf::RenderTarget* target)
     target->draw(_fondoMenu);
 
     renderBotones(target);
+
+
+    /// VER POSICION MOUSE AL LADO DE LA FLECHA (QUITAR DESPUES)
+    sf::Text textoMouse;
+    textoMouse.setPosition(posMouseVista.x, posMouseVista.y - 50);
+    textoMouse.setFont(_fuenteBoton);
+    textoMouse.setCharacterSize(12);
+    std::stringstream ss;
+    ss << posMouseVista.x << " " << posMouseVista.y;
+    textoMouse.setString(ss.str());
+
+    target->draw(textoMouse);
+
+
+
 }

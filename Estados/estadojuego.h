@@ -1,21 +1,25 @@
 #ifndef ESTADOJUEGO_H
 #define ESTADOJUEGO_H
 #include "estadobase.h"
+#include "jugador.h"
 
 
 class EstadoJuego : public EstadoBase
 {
-    private: // Variables
-        Entidades player;
+    private: // Atributos
+        Jugador* player;
 
 
-    private: // Funciones
+    private: // Metodos
         void iniciarKeybinds();
+        void iniciarTexturas();
+        void iniciarJugadores();
+
     public:
         EstadoJuego(sf::RenderWindow* ventana, std::map<std::string, int>* teclasSoportadas, std::stack<EstadoBase*>* estado);
         ~EstadoJuego();
 
-        void finEstado();
+
 
         void actualizarInput(const float& DT);
         void actualizar(const float& DT);

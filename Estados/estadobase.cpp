@@ -1,5 +1,5 @@
 #include "estadobase.h"
-
+/// --------------------- CONSTRUCTOR / DESTRUCTOR ---------------------
 EstadoBase::EstadoBase(sf::RenderWindow* ventana, std::map<std::string, int>* teclasSoportadas, std::stack<EstadoBase*>* estado)
 {
     _ventana = ventana;
@@ -14,6 +14,18 @@ EstadoBase::~EstadoBase()
     //dtor
 }
 
+
+/// --------------------- FUNCIONES ---------------------
+void EstadoBase::finEstado()
+{
+    _salir = true;
+}
+
+const bool& EstadoBase::getSalir() const
+{
+    return _salir;
+}
+
 void EstadoBase::actualizarPosicionMouse()
 {
     posMousePantalla = sf::Mouse::getPosition();
@@ -21,14 +33,3 @@ void EstadoBase::actualizarPosicionMouse()
     posMouseVista = _ventana->mapPixelToCoords(sf::Mouse::getPosition(*_ventana));
 }
 
-void EstadoBase::checkSalir()
-{
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(_keybinds.at("CLOSE")))){
-        _salir = true;
-    }
-}
-
-const bool& EstadoBase::getSalir() const
-{
-    return _salir;
-}
