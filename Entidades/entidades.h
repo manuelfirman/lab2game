@@ -1,15 +1,19 @@
 #ifndef ENTIDADES_H
 #define ENTIDADES_H
+
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Audio.hpp>
+
 #include <vector>
 #include <stack>
 #include <map>
 #include <ctime>
 #include <cstdlib>
 #include <iostream>
+
+#include <fstream>
 
 class Entidades
 {

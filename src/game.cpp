@@ -9,21 +9,51 @@ void Game::iniciarVariables()
 
 void Game::iniciarVentana()
 {
-    _ventana = new sf::RenderWindow(sf::VideoMode(800, 600),"RPG GAME");
+    std::ifstream archivo("config/config_ventana.ini");
+    std::string titulo = "vacio";
+
+    sf::VideoMode limite_ventana(800, 600);
+    unsigned limite_framerate = 120;
+    bool sinc_vertical = false;
+    bool fullscreen = false;
+
+    if(archivo.is_open()){
+        std::getline(archivo, titulo);
+        archivo >> limite_ventana.width >> limite_ventana.height;
+        archivo >> limite_framerate;
+        archivo >> sinc_vertical;
+        archivo >> fullscreen;
+    }
+
+    archivo.close();
+
+    _ventana = new sf::RenderWindow(limite_ventana, titulo);
+    _ventana->setFramerateLimit(limite_framerate);
+    _ventana->setVerticalSyncEnabled(sinc_vertical);
 }
 
 void Game::iniciarEstados()
 {
-    _estado.push(new EstadoJuego(_ventana, &_teclasSoportadas));
+    _estado.push(new EstadoMenuPrincipal(_ventana, &_teclasSoportadas, &_estado));
 }
 
 void Game::iniciarTeclas()
 {
-    _teclasSoportadas.emplace("ESC", sf::Keyboard::Key::Escape);
-    _teclasSoportadas.emplace("A", sf::Keyboard::Key::A);
-    _teclasSoportadas.emplace("W", sf::Keyboard::Key::W);
-    _teclasSoportadas.emplace("D", sf::Keyboard::Key::D);
-    _teclasSoportadas.emplace("S", sf::Keyboard::Key::S);
+    std::ifstream archivo("config/teclas_soportadas.ini");
+
+    if(archivo.is_open()){
+        std::string tecla = "";
+        int valor_tecla = 0;
+
+        while(archivo >> tecla >> valor_tecla){
+            _teclasSoportadas[tecla] = valor_tecla;
+        }
+    }
+
+    // DEBUG TECLAS SOPORTADAS (ELIMINAR LUEGO)
+    for(auto i : _teclasSoportadas){
+        std::cout << i.first << " " << i.second << "\n";
+    }
 }
 
 /// --------------------- CONSTRUCTOR / DESTRUCTOR ---------------------

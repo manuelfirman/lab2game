@@ -2,15 +2,21 @@
 /// --------------------- INICIALIZACIONES --------------------------
 void EstadoJuego::iniciarKeybinds()
 {
-    _keybinds.emplace("MOVER_IZQUIERDA",_teclasSoportadas->at("A"));
-    _keybinds.emplace("MOVER_DERECHA",_teclasSoportadas->at("D"));
-    _keybinds.emplace("MOVER_ARRIBA",_teclasSoportadas->at("W"));
-    _keybinds.emplace("MOVER_ABAJO",_teclasSoportadas->at("S"));
+    std::ifstream archivo("config/teclas_juego.ini");
+
+    if(archivo.is_open()){
+        std::string accion = "";
+        std::string tecla = "";
+
+        while(archivo >> accion >> tecla){
+            _keybinds[accion] = _teclasSoportadas->at(tecla);
+        }
+    }
 }
 
 
 /// --------------------- CONSTRUCTOR / DESTRUCTOR ---------------------
-EstadoJuego::EstadoJuego(sf::RenderWindow* ventana, std::map<std::string, int>* teclasSoportadas) : EstadoBase(ventana, teclasSoportadas)
+EstadoJuego::EstadoJuego(sf::RenderWindow* ventana, std::map<std::string, int>* teclasSoportadas, std::stack<EstadoBase*>* estado) : EstadoBase(ventana, teclasSoportadas, estado)
 {
     this->iniciarKeybinds();
 }
@@ -46,6 +52,7 @@ void EstadoJuego::actualizarInput(const float& DT)
 
 void EstadoJuego::actualizar(const float& DT)
 {
+    actualizarPosicionMouse();
     actualizarInput(DT);
 
     player.actualizar(DT);

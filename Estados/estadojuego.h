@@ -12,7 +12,7 @@ class EstadoJuego : public EstadoBase
     private: // Funciones
         void iniciarKeybinds();
     public:
-        EstadoJuego(sf::RenderWindow* ventana, std::map<std::string, int>* teclasSoportadas);
+        EstadoJuego(sf::RenderWindow* ventana, std::map<std::string, int>* teclasSoportadas, std::stack<EstadoBase*>* estado);
         ~EstadoJuego();
 
         void finEstado();

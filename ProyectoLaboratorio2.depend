@@ -2,8 +2,9 @@
 1664054567 source:d:\documentos\programacion\proyectolaboratorio2\main.cpp
 	"game.h"
 
-1664069681 d:\documentos\programacion\proyectolaboratorio2\include\game.h
-	"../Estados/estadojuego.h"
+1664074692 d:\documentos\programacion\proyectolaboratorio2\include\game.h
+	"estadojuego.h"
+	"estadomenuprincipal.h"
 
 1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -414,7 +415,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1664069808 source:d:\documentos\programacion\proyectolaboratorio2\src\game.cpp
+1664081278 source:d:\documentos\programacion\proyectolaboratorio2\src\game.cpp
 	"Game.h"
 
 1663722504 source:d:\documentos\programacion\proyectolaboratorio2\src\animacion.cpp
@@ -1115,22 +1116,22 @@
 1664058073 source:d:\documentos\programacion\proyectolaboratorio2\src\estado_base.cpp
 	"Estado_Base.h"
 
-1664069761 source:d:\documentos\programacion\proyectolaboratorio2\estados\estadobase.cpp
+1664081022 source:d:\documentos\programacion\proyectolaboratorio2\estados\estadobase.cpp
 	"estadobase.h"
 
-1664070016 d:\documentos\programacion\proyectolaboratorio2\estados\estadobase.h
+1664081026 d:\documentos\programacion\proyectolaboratorio2\estados\estadobase.h
 	"entidades.h"
 
-1664069884 source:d:\documentos\programacion\proyectolaboratorio2\estados\estadojuego.cpp
+1664080777 source:d:\documentos\programacion\proyectolaboratorio2\estados\estadojuego.cpp
 	"estadojuego.h"
 
-1664069771 d:\documentos\programacion\proyectolaboratorio2\estados\estadojuego.h
+1664080735 d:\documentos\programacion\proyectolaboratorio2\estados\estadojuego.h
 	"estadobase.h"
 
 1664065030 source:d:\documentos\programacion\proyectolaboratorio2\entidades\entidades.cpp
 	"entidades.h"
 
-1664067397 d:\documentos\programacion\proyectolaboratorio2\entidades\entidades.h
+1664073512 d:\documentos\programacion\proyectolaboratorio2\entidades\entidades.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -1141,4 +1142,20 @@
 	<ctime>
 	<cstdlib>
 	<iostream>
+	<fstream>
+
+1664080183 source:d:\documentos\programacion\proyectolaboratorio2\estados\estadomenuprincipal.cpp
+	"estadomenuprincipal.h"
+
+1664081126 d:\documentos\programacion\proyectolaboratorio2\estados\estadomenuprincipal.h
+	"estadobase.h"
+	"estadojuego.h"
+	"boton.h"
+
+1664080234 d:\documentos\programacion\proyectolaboratorio2\recursos\boton.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1664080256 source:d:\documentos\programacion\proyectolaboratorio2\recursos\boton.cpp
+	"boton.h"
 

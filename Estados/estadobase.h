@@ -6,11 +6,18 @@ class EstadoBase
 {
     private:
 
+
     protected: // Variables
+        std::stack<EstadoBase*>* _estado; // Pila de punteros que apuntan a pila de punteros EstadoBase (Para no hacer una copia)
+
         sf::RenderWindow* _ventana;
         std::map<std::string, int>* _teclasSoportadas;
         std::map<std::string, int> _keybinds;
         bool _salir;
+
+        sf::Vector2i posMousePantalla;
+        sf::Vector2i posMouseVentana;
+        sf::Vector2f posMouseVista;
 
         std::vector<sf::Texture> _texturas;
 
@@ -19,8 +26,11 @@ class EstadoBase
 
     public:
         // Const - Dtor
-        EstadoBase(sf::RenderWindow* ventana, std::map<std::string, int>* teclasSoportadas);
+        EstadoBase(sf::RenderWindow* ventana, std::map<std::string, int>* teclasSoportadas, std::stack<EstadoBase*>* estado);
         virtual ~EstadoBase();
+
+        // Funciones
+        virtual void actualizarPosicionMouse();
 
         // salida de estado
         virtual void checkSalir();

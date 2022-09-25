@@ -1,7 +1,8 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "../Estados/estadojuego.h"
+#include "estadojuego.h"
+#include "estadomenuprincipal.h"
 
 class Game{
 private: // Variables
