@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1663828201 source:d:\documentos\programacion\proyectolaboratorio2\main.cpp
+1664054567 source:d:\documentos\programacion\proyectolaboratorio2\main.cpp
 	"game.h"
 
-1663828105 d:\documentos\programacion\proyectolaboratorio2\include\game.h
-	"Ventana.h"
+1664069681 d:\documentos\programacion\proyectolaboratorio2\include\game.h
+	"../Estados/estadojuego.h"
 
 1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -414,8 +414,8 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1663827700 source:d:\documentos\programacion\proyectolaboratorio2\src\game.cpp
-	"game.h"
+1664069808 source:d:\documentos\programacion\proyectolaboratorio2\src\game.cpp
+	"Game.h"
 
 1663722504 source:d:\documentos\programacion\proyectolaboratorio2\src\animacion.cpp
 	"animacion.h"
@@ -430,12 +430,14 @@
 1663726296 d:\documentos\programacion\proyectolaboratorio2\include\player.h
 	<SFML\Graphics.hpp>
 
-1663828071 d:\documentos\programacion\proyectolaboratorio2\include\ventana.h
+1664054567 d:\documentos\programacion\proyectolaboratorio2\include\ventana.h
 	<string>
 	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
 	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
 
-1663827625 source:d:\documentos\programacion\proyectolaboratorio2\src\ventana.cpp
+1663828594 source:d:\documentos\programacion\proyectolaboratorio2\src\ventana.cpp
 	"ventana.h"
 
 1663833759 source:c:\users\manuel\desktop\proyecto\lab2game\main.cpp
@@ -996,4 +998,147 @@
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
 	<SFML/Audio.hpp>
+
+1664058073 d:\documentos\programacion\proyectolaboratorio2\include\estado_base.h
+	<vector>
+	<ctime>
+	<cstdlib>
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+
+1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\audio.hpp
+	<SFML/System.hpp>
+	<SFML/Audio/InputSoundFile.hpp>
+	<SFML/Audio/Listener.hpp>
+	<SFML/Audio/Music.hpp>
+	<SFML/Audio/OutputSoundFile.hpp>
+	<SFML/Audio/Sound.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundBufferRecorder.hpp>
+	<SFML/Audio/SoundFileFactory.hpp>
+	<SFML/Audio/SoundFileReader.hpp>
+	<SFML/Audio/SoundFileWriter.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/Audio/SoundStream.hpp>
+
+1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\audio\inputsoundfile.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<algorithm>
+
+1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\audio\export.hpp
+	<SFML/Config.hpp>
+
+1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\audio\listener.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/Vector3.hpp>
+
+1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\audio\music.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundStream.hpp>
+	<SFML/Audio/InputSoundFile.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+
+1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\audio\soundstream.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/System/Mutex.hpp>
+	<cstdlib>
+
+1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\audio\soundsource.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Vector3.hpp>
+
+1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\audio\alresource.hpp
+	<SFML/Audio/Export.hpp>
+
+1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\audio\outputsoundfile.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<string>
+
+1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\audio\sound.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Time.hpp>
+	<cstdlib>
+
+1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\audio\soundbuffer.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+	<set>
+
+1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\audio\soundbufferrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<vector>
+
+1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\audio\soundrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<vector>
+	<string>
+
+1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\audio\soundfilefactory.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+	<vector>
+	<SFML/Audio/SoundFileFactory.inl>
+
+1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\audio\soundfilefactory.inl
+
+1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\audio\soundfilereader.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+
+1525812018 d:\documentos\programacion\proyectolaboratorio2\sfml\include\sfml\audio\soundfilewriter.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+
+1664058073 source:d:\documentos\programacion\proyectolaboratorio2\src\estado_base.cpp
+	"Estado_Base.h"
+
+1664069761 source:d:\documentos\programacion\proyectolaboratorio2\estados\estadobase.cpp
+	"estadobase.h"
+
+1664070016 d:\documentos\programacion\proyectolaboratorio2\estados\estadobase.h
+	"entidades.h"
+
+1664069884 source:d:\documentos\programacion\proyectolaboratorio2\estados\estadojuego.cpp
+	"estadojuego.h"
+
+1664069771 d:\documentos\programacion\proyectolaboratorio2\estados\estadojuego.h
+	"estadobase.h"
+
+1664065030 source:d:\documentos\programacion\proyectolaboratorio2\entidades\entidades.cpp
+	"entidades.h"
+
+1664067397 d:\documentos\programacion\proyectolaboratorio2\entidades\entidades.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<vector>
+	<stack>
+	<map>
+	<ctime>
+	<cstdlib>
+	<iostream>
 

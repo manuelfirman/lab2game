@@ -1,9 +1,10 @@
 #ifndef GAME_H
 #define GAME_H
-#include "Estado_Base.h"
+
+#include "../Estados/estadojuego.h"
 
 class Game{
-private:
+private: // Variables
 
 	sf::RenderWindow* _ventana; // memoria dinamica
 	sf::Event sfEvento;
@@ -11,18 +12,32 @@ private:
 	sf::Clock relojDt;
 	float _DT;
 
-private:
+	std::stack<EstadoBase*> _estado;
+	std::map<std::string, int> _teclasSoportadas;
+
+private: // Funciones
     void iniciarVariables();
     void iniciarVentana();
+    void iniciarEstados();
+    void iniciarTeclas();
 
 public:
 	Game();
 	~Game();
+
+
+	/// Actualizar
     void actualizarDT();
 	void actualizarEventosSFML();
 	void actualizar();
+
+	/// Renderizar
 	void renderizar();
+
+	/// Core
 	void gameloop();
+
+	void finAplicacion();
 };
 
 #endif // GAME_H

@@ -19,6 +19,7 @@
 					<Add option="-g" />
 					<Add directory="SFML/include" />
 					<Add directory="include" />
+					<Add directory="Entidades" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-system" />
@@ -40,6 +41,7 @@
 					<Add option="-std=c++14" />
 					<Add directory="include" />
 					<Add directory="SFML/include" />
+					<Add directory="Entidades" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -57,13 +59,17 @@
 			<Add option="-std=c++14" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="include/Estado_Base.h" />
+		<Unit filename="Entidades/entidades.cpp" />
+		<Unit filename="Entidades/entidades.h" />
+		<Unit filename="Estados/estadobase.cpp" />
+		<Unit filename="Estados/estadobase.h" />
+		<Unit filename="Estados/estadojuego.cpp" />
+		<Unit filename="Estados/estadojuego.h" />
 		<Unit filename="include/animacion.h" />
 		<Unit filename="include/game.h" />
 		<Unit filename="include/player.h" />
 		<Unit filename="include/ventana.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/Estado_Base.cpp" />
 		<Unit filename="src/animacion.cpp" />
 		<Unit filename="src/game.cpp" />
 		<Unit filename="src/player.cpp" />
