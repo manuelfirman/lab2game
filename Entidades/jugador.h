@@ -14,7 +14,7 @@ class Jugador : public Entidades
         void iniciarComponentes();
 
     public:
-        Jugador(float x, float y, sf::Texture* textura);
+        Jugador(float x, float y, sf::Texture& textura);
         ~Jugador();
 };
 

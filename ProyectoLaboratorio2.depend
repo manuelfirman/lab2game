@@ -1122,17 +1122,17 @@
 1664087734 d:\documentos\programacion\proyectolaboratorio2\estados\estadobase.h
 	"entidades.h"
 
-1664088701 source:d:\documentos\programacion\proyectolaboratorio2\estados\estadojuego.cpp
+1664095190 source:d:\documentos\programacion\proyectolaboratorio2\estados\estadojuego.cpp
 	"estadojuego.h"
 
 1664087723 d:\documentos\programacion\proyectolaboratorio2\estados\estadojuego.h
 	"estadobase.h"
 	"jugador.h"
 
-1664088601 source:d:\documentos\programacion\proyectolaboratorio2\entidades\entidades.cpp
+1664095740 source:d:\documentos\programacion\proyectolaboratorio2\entidades\entidades.cpp
 	"entidades.h"
 
-1664088473 d:\documentos\programacion\proyectolaboratorio2\entidades\entidades.h
+1664095754 d:\documentos\programacion\proyectolaboratorio2\entidades\entidades.h
 	"movimiento.h"
 
 1664085702 source:d:\documentos\programacion\proyectolaboratorio2\estados\estadomenuprincipal.cpp
@@ -1158,13 +1158,13 @@
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1664088313 source:d:\documentos\programacion\proyectolaboratorio2\entidades\jugador.cpp
+1664096057 source:d:\documentos\programacion\proyectolaboratorio2\entidades\jugador.cpp
 	"jugador.h"
 
-1664088286 d:\documentos\programacion\proyectolaboratorio2\entidades\jugador.h
+1664091670 d:\documentos\programacion\proyectolaboratorio2\entidades\jugador.h
 	<Entidades.h>
 
-1664088031 d:\documentos\programacion\proyectolaboratorio2\componentes\movimiento.h
+1664092387 d:\documentos\programacion\proyectolaboratorio2\componentes\movimiento.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -1177,6 +1177,6 @@
 	<iostream>
 	<fstream>
 
-1664088051 source:d:\documentos\programacion\proyectolaboratorio2\componentes\movimiento.cpp
+1664095966 source:d:\documentos\programacion\proyectolaboratorio2\componentes\movimiento.cpp
 	"movimiento.h"
 

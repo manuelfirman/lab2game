@@ -11,8 +11,7 @@ class Entidades
 
 
     protected: // Atributos
-        sf::Texture* _textura; // puntero para no duplicar la textura
-        sf::Sprite* _sprite;
+        sf::Sprite _sprite;
 
         Movimiento* movimiento;
 
@@ -22,12 +21,12 @@ class Entidades
         Entidades();
         virtual ~Entidades();
         // Funciones de componentes
-        void crearSprite(sf::Texture* textura);
-        void crearComponenteMovimiento(const float velocidadMaxima);
+        void setTextura(sf::Texture& textura);
+        void crearComponenteMovimiento(float velocidadMaxima, float aceleracion, float desaceleracion);
 
         /// Overriders
         virtual void setPosicion(const float x, const float y);
-        virtual void mover(const float& DT, const float x, const float y);
+        virtual void mover(const float x, const float y, const float& DT);
         virtual void actualizar(const float& DT);
         virtual void renderizar(sf::RenderTarget* target);
 };

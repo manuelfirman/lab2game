@@ -25,7 +25,7 @@ void EstadoJuego::iniciarTexturas()
 
 void EstadoJuego::iniciarJugadores()
 {
-    player = new Jugador(0,0, &_texturas["JUGADOR_QUIETO"]);
+    player = new Jugador(0,0, _texturas["JUGADOR_QUIETO"]);
 }
 
 /// --------------------- CONSTRUCTOR / DESTRUCTOR ---------------------
@@ -46,16 +46,16 @@ EstadoJuego::~EstadoJuego()
 void EstadoJuego::actualizarInput(const float& DT)
 {
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(_keybinds.at("MOVER_IZQUIERDA"))))
-        player->mover(DT, -1.f, 0.f);
+        player->mover(-1.f, 0.f, DT);
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(_keybinds.at("MOVER_DERECHA"))))
-        player->mover(DT, 1.f, 0.f);
+        player->mover(1.f, 0.f, DT);
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(_keybinds.at("MOVER_ARRIBA"))))
-        player->mover(DT, 0.f, -1.f);
+        player->mover(0.f, -1.f, DT);
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(_keybinds.at("MOVER_ABAJO"))))
-        player->mover(DT, 0.f, 1.f);
+        player->mover(0.f, 1.f, DT);
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(_keybinds.at("CLOSE"))))
         finEstado();

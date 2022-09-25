@@ -7,17 +7,17 @@ void Jugador::iniciarVariables()
 
 void Jugador::iniciarComponentes()
 {
-    crearComponenteMovimiento(20.f);
+    crearComponenteMovimiento(100.f, 5.f, 2.f);
 }
 
 
 /// --------------------- CONSTRUCTOR / DESTRUCTOR ---------------------
-Jugador::Jugador(float x, float y, sf::Texture* textura)
+Jugador::Jugador(float x, float y, sf::Texture& textura)
 {
     this->iniciarVariables();
     this->iniciarComponentes();
 
-    crearSprite(textura);
+    setTextura(textura);
     setPosicion(x, y);
 
 }

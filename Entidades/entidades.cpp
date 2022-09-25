@@ -2,8 +2,6 @@
 /// --------------------- INICIALIZACIONES --------------------------
 void Entidades::iniciarVariables()
 {
-    _textura = NULL;
-    _sprite = NULL;
     movimiento = NULL;
 }
 
@@ -17,37 +15,33 @@ Entidades::Entidades()
 
 Entidades::~Entidades()
 {
-    delete _sprite;
+    delete &_sprite;
 }
 
 
 /// --------------------- FUNCIONES ---------------------
 
-void Entidades::crearSprite(sf::Texture* textura)
+void Entidades::setTextura(sf::Texture& textura)
 {
-    _textura = textura;
-    _sprite = new sf::Sprite(*_textura);
+    _sprite.setTexture(textura);
 
 }
 
-void Entidades::crearComponenteMovimiento(const float velocidadMaxima)
+void Entidades::crearComponenteMovimiento(float velocidadMaxima, float aceleracion, float desaceleracion)
 {
-    movimiento = new Movimiento(velocidadMaxima, 0,0);
+    movimiento = new Movimiento(_sprite, velocidadMaxima, aceleracion, desaceleracion);
 }
 
 void Entidades::setPosicion(const float x, const float y)
 {
-    if(_sprite){
-        _sprite->setPosition(x, y);
-    }
+    _sprite.setPosition(x, y);
 }
 
-void Entidades::mover(const float& DT, const float dir_x, const float dir_y)
+void Entidades::mover(const float dir_x, const float dir_y, const float& DT)
 {
-    if(_sprite && this->movimiento){
+    if(this->movimiento){
     // Recibe direcciones (x y)
-        movimiento->mover(dir_x, dir_y); // setea velocidad
-        _sprite->move(movimiento->getVelocidad() * DT);
+        movimiento->mover(dir_x, dir_y, DT); // setea velocidad
     }
 }
 
@@ -55,11 +49,13 @@ void Entidades::mover(const float& DT, const float dir_x, const float dir_y)
 /// --------------------- ACTUALIZACIONES --------------------------
 void Entidades::actualizar(const float& DT)
 {
-
+    if(movimiento){
+        movimiento->actualizar(DT);
+    }
 }
 
 /// --------------------- RENDERIZAR --------------------------
 void Entidades::renderizar(sf::RenderTarget* target)
 {
-    target->draw(*_sprite);
+    target->draw(_sprite);
 }
