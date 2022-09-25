@@ -2,7 +2,7 @@
 1664054567 source:d:\documentos\programacion\proyectolaboratorio2\main.cpp
 	"game.h"
 
-1664074692 d:\documentos\programacion\proyectolaboratorio2\include\game.h
+1664082973 d:\documentos\programacion\proyectolaboratorio2\include\game.h
 	"estadojuego.h"
 	"estadomenuprincipal.h"
 
@@ -415,7 +415,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1664081278 source:d:\documentos\programacion\proyectolaboratorio2\src\game.cpp
+1664082986 source:d:\documentos\programacion\proyectolaboratorio2\src\game.cpp
 	"Game.h"
 
 1663722504 source:d:\documentos\programacion\proyectolaboratorio2\src\animacion.cpp
@@ -1144,7 +1144,7 @@
 	<iostream>
 	<fstream>
 
-1664080183 source:d:\documentos\programacion\proyectolaboratorio2\estados\estadomenuprincipal.cpp
+1664081393 source:d:\documentos\programacion\proyectolaboratorio2\estados\estadomenuprincipal.cpp
 	"estadomenuprincipal.h"
 
 1664081126 d:\documentos\programacion\proyectolaboratorio2\estados\estadomenuprincipal.h

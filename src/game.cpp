@@ -10,31 +10,42 @@ void Game::iniciarVariables()
 void Game::iniciarVentana()
 {
     std::ifstream archivo("config/config_ventana.ini");
-    std::string titulo = "vacio";
+    _modosDeVideo = sf::VideoMode::getFullscreenModes();
 
-    sf::VideoMode limite_ventana(800, 600);
+    std::string titulo = "vacio";
+    sf::VideoMode limite_ventana = sf::VideoMode::getDesktopMode();
     unsigned limite_framerate = 120;
     bool sinc_vertical = false;
     bool fullscreen = false;
+    unsigned nivel_antialiasing = 0;
 
     if(archivo.is_open()){
         std::getline(archivo, titulo);
         archivo >> limite_ventana.width >> limite_ventana.height;
         archivo >> limite_framerate;
-        archivo >> sinc_vertical;
         archivo >> fullscreen;
+        archivo >> sinc_vertical;
+        archivo >> nivel_antialiasing;
     }
 
     archivo.close();
 
-    _ventana = new sf::RenderWindow(limite_ventana, titulo);
+    _fullscreen = fullscreen;
+    _configVentana.antialiasingLevel = nivel_antialiasing;
+
+    if(fullscreen)
+        _ventana = new sf::RenderWindow(limite_ventana, titulo, sf::Style::Fullscreen, _configVentana);
+    else
+        _ventana = new sf::RenderWindow(limite_ventana, titulo, sf::Style::Titlebar | sf::Style::Close, _configVentana);
+
+
     _ventana->setFramerateLimit(limite_framerate);
     _ventana->setVerticalSyncEnabled(sinc_vertical);
 }
 
 void Game::iniciarEstados()
 {
-    _estado.push(new EstadoMenuPrincipal(_ventana, &_teclasSoportadas, &_estado));
+    _estado.push(new EstadoMenuPrincipal(_ventana, &_teclasSoportadas, &_estado)); // necesita pasarse direcciones al puntero
 }
 
 void Game::iniciarTeclas()

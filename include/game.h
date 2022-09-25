@@ -9,6 +9,9 @@ private: // Variables
 
 	sf::RenderWindow* _ventana; // memoria dinamica
 	sf::Event sfEvento;
+	std::vector<sf::VideoMode> _modosDeVideo;
+	sf::ContextSettings _configVentana;
+	bool _fullscreen;
 
 	sf::Clock relojDt;
 	float _DT;
