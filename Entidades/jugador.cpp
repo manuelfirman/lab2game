@@ -18,6 +18,8 @@ Jugador::Jugador(float x, float y, sf::Texture& textura)
 
     setPosicion(x, y);
 
+//    crearHitbox(_sprite, 0.f, 0.f, _sprite.getGlobalBounds().width, _sprite.getGlobalBounds().height);
+    crearHitbox(_sprite, 18.f, 18.f, 32, 40);
     crearComponenteMovimiento(200.f, 15.f, 4.f); // Movimiento
     crearComponenteAnimacion(textura);
 
@@ -40,13 +42,15 @@ void Jugador::actualizar(const float& DT)
 
     if(_movimiento->getEstadoMov(QUIETO))
         _animacion->play("CAMINAR_QUIETO", DT);
-    else if(_movimiento->getEstadoMov(MOV_ABAJO))
-        _animacion->play("CAMINAR_ABAJO", DT);
-    else if(_movimiento->getEstadoMov(MOV_ARRIBA))
-        _animacion->play("CAMINAR_ARRIBA", DT);
     else if(_movimiento->getEstadoMov(MOV_DERECHA))
         _animacion->play("CAMINAR_DERECHA", DT);
     else if(_movimiento->getEstadoMov(MOV_IZQUIERDA))
         _animacion->play("CAMINAR_IZQUIERDA", DT);
+    else if(_movimiento->getEstadoMov(MOV_ABAJO))
+        _animacion->play("CAMINAR_ABAJO", DT);
+    else if(_movimiento->getEstadoMov(MOV_ARRIBA))
+        _animacion->play("CAMINAR_ARRIBA", DT);
 
+
+    _hitbox->actualizar();
 }

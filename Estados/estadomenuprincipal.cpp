@@ -96,7 +96,7 @@ void EstadoMenuPrincipal::actualizarBotones()
     if(_boton["ESTADO_CARGAR"]->getClick());
 
 
-    if(_boton["ESTADO_OPCIONES"]->getClick())
+    if(_boton["ESTADO_EDITOR"]->getClick())
         _estado->push(new EstadoEditor(_ventana, _teclasSoportadas, _estado));
 
 
@@ -115,7 +115,7 @@ void EstadoMenuPrincipal::actualizar(const float& DT)
 
 
 /// --------------------- RENDERIZAR --------------------------
-void EstadoMenuPrincipal::renderBotones(sf::RenderTarget* target)
+void EstadoMenuPrincipal::renderBotones(sf::RenderTarget& target)
 {
     for(auto &botones : _boton){
         botones.second->renderizar(target);
@@ -130,7 +130,7 @@ void EstadoMenuPrincipal::renderizar(sf::RenderTarget* target)
 
     target->draw(_fondoMenu);
 
-    renderBotones(target);
+    renderBotones(*target);
 
 
     /// VER POSICION MOUSE AL LADO DE LA FLECHA (QUITAR DESPUES)

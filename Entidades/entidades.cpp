@@ -4,6 +4,7 @@ void Entidades::iniciarVariables()
 {
     _movimiento = NULL;
     _animacion = NULL;
+    _hitbox = NULL;
 }
 
 /// --------------------- CONSTRUCTOR / DESTRUCTOR ---------------------
@@ -11,13 +12,13 @@ Entidades::Entidades()
 {
     this->iniciarVariables();
 
-
 }
 
 Entidades::~Entidades()
 {
     delete _movimiento;
     delete _animacion;
+    delete _hitbox;
 }
 
 
@@ -28,6 +29,10 @@ void Entidades::setTextura(sf::Texture& textura)
     _sprite.setTexture(textura);
 }
 
+void Entidades::crearHitbox(sf::Sprite& sprite, float x, float y, float ancho, float alto)
+{
+    _hitbox = new Hitbox(sprite, x, y, ancho, alto);
+}
 
 void Entidades::crearComponenteMovimiento(float velocidadMaxima, float aceleracion, float desaceleracion)
 {
@@ -62,7 +67,11 @@ void Entidades::actualizar(const float& DT)
 }
 
 /// --------------------- RENDERIZAR --------------------------
-void Entidades::renderizar(sf::RenderTarget* target)
+void Entidades::renderizar(sf::RenderTarget& target)
 {
-    target->draw(_sprite);
+    target.draw(_sprite);
+
+    if(_hitbox){
+        _hitbox->renderizar(target);
+    }
 }

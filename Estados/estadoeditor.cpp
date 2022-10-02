@@ -85,7 +85,7 @@ void EstadoEditor::actualizar(const float& DT)
 
 
 /// --------------------- RENDERIZAR --------------------------
-void EstadoEditor::renderBotones(sf::RenderTarget* target)
+void EstadoEditor::renderBotones(sf::RenderTarget& target)
 {
     for(auto &botones : _boton){
         botones.second->renderizar(target);
@@ -98,7 +98,7 @@ void EstadoEditor::renderizar(sf::RenderTarget* target)
     if(!target)
         target = _ventana;
 
-    renderBotones(target);
+    renderBotones(*target);
 
     /// VER POSICION MOUSE AL LADO DE LA FLECHA (QUITAR DESPUES)
 //    sf::Text textoMouse;

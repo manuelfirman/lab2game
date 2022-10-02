@@ -27,7 +27,7 @@ class EstadoMenuPrincipal : public EstadoBase
         ~EstadoMenuPrincipal();
 
         void actualizarBotones();
-        void renderBotones(sf::RenderTarget* target);
+        void renderBotones(sf::RenderTarget& target);
 
 
         void actualizarInput(const float& DT);

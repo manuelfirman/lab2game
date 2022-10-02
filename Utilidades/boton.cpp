@@ -81,8 +81,8 @@ void Boton::actualizar(sf::Vector2f posMouse)
 }
 
 /// RENDERIZAR BOTON
-void Boton::renderizar(sf::RenderTarget* target)
+void Boton::renderizar(sf::RenderTarget& target)
 {
-    target->draw(_boton);
-    target->draw(_texto);
+    target.draw(_boton);
+    target.draw(_texto);
 }

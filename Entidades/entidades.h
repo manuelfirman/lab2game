@@ -17,6 +17,7 @@ class Entidades
 
         Movimiento* _movimiento;
         Animacion* _animacion;
+        Hitbox* _hitbox;
 
 
 
@@ -27,6 +28,7 @@ class Entidades
         void setTextura(sf::Texture& textura);
 
         /// Componentes
+        void crearHitbox(sf::Sprite& sprite, float x, float y, float ancho, float alto);
         void crearComponenteMovimiento(float velocidadMaxima, float aceleracion, float desaceleracion);
         void crearComponenteAnimacion(sf::Texture& textura);
 
@@ -35,7 +37,7 @@ class Entidades
         virtual void mover(const float x, const float y, const float& DT);
 
         virtual void actualizar(const float& DT);
-        virtual void renderizar(sf::RenderTarget* target);
+        virtual void renderizar(sf::RenderTarget& target);
 };
 
 #endif // ENTIDADES_H

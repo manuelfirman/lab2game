@@ -36,7 +36,7 @@ class Boton
         void setPosicion(sf::Vector2f posicion);
         void actualizar(sf::Vector2f posMouse);
         bool getClick();
-        void renderizar(sf::RenderTarget* target);
+        void renderizar(sf::RenderTarget& target);
 
 };
 

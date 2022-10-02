@@ -78,5 +78,5 @@ void EstadoJuego::renderizar(sf::RenderTarget* target)
         target = _ventana;
 
 
-    player->renderizar(target);
+    player->renderizar(*target);
 }

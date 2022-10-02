@@ -444,8 +444,9 @@
 1663833759 source:c:\users\manuel\desktop\proyecto\lab2game\main.cpp
 	"game.h"
 
-1663835085 c:\users\manuel\desktop\proyecto\lab2game\include\game.h
-	"Estado_Base.h"
+1664690936 c:\users\manuel\desktop\proyecto\lab2game\include\game.h
+	"estadojuego.h"
+	"estadomenuprincipal.h"
 
 1663833052 c:\users\manuel\desktop\proyecto\lab2game\include\ventana.h
 	<string>
@@ -870,7 +871,7 @@
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1663834820 source:c:\users\manuel\desktop\proyecto\lab2game\src\game.cpp
+1664690937 source:c:\users\manuel\desktop\proyecto\lab2game\src\game.cpp
 	"Game.h"
 
 1663725617 source:c:\users\manuel\desktop\proyecto\lab2game\src\player.cpp
@@ -1200,4 +1201,96 @@
 1664690042 source:d:\documentos\programacion\proyectolaboratorio2\estados\estadoeditor.cpp
 	"estadoeditor.h"
 	<sstream>
+
+1664690936 source:c:\users\manuel\desktop\proyecto\lab2game\componentes\animacion.cpp
+	"animacion.h"
+
+1664690936 c:\users\manuel\desktop\proyecto\lab2game\componentes\animacion.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<iostream>
+	<map>
+
+1664690936 source:c:\users\manuel\desktop\proyecto\lab2game\componentes\movimiento.cpp
+	"movimiento.h"
+
+1664690936 c:\users\manuel\desktop\proyecto\lab2game\componentes\movimiento.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<vector>
+	<stack>
+	<map>
+	<ctime>
+	<cstdlib>
+	<iostream>
+	<fstream>
+
+1664693696 source:c:\users\manuel\desktop\proyecto\lab2game\entidades\entidades.cpp
+	"entidades.h"
+
+1664693053 c:\users\manuel\desktop\proyecto\lab2game\entidades\entidades.h
+	"hitbox.h"
+	"movimiento.h"
+	"animacion.h"
+
+1664692451 c:\users\manuel\desktop\proyecto\lab2game\componentes\hitbox.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<ctime>
+	<cstdlib>
+	<iostream>
+	<fstream>
+
+1664693526 source:c:\users\manuel\desktop\proyecto\lab2game\entidades\jugador.cpp
+	"jugador.h"
+
+1664690936 c:\users\manuel\desktop\proyecto\lab2game\entidades\jugador.h
+	<Entidades.h>
+
+1664690936 source:c:\users\manuel\desktop\proyecto\lab2game\estados\estadobase.cpp
+	"estadobase.h"
+
+1664690936 c:\users\manuel\desktop\proyecto\lab2game\estados\estadobase.h
+	"entidades.h"
+
+1664693543 source:c:\users\manuel\desktop\proyecto\lab2game\estados\estadoeditor.cpp
+	"estadoeditor.h"
+	<sstream>
+
+1664693455 c:\users\manuel\desktop\proyecto\lab2game\estados\estadoeditor.h
+	<estadobase.h>
+	<../Utilidades/boton.h>
+
+1664693091 c:\users\manuel\desktop\proyecto\lab2game\utilidades\boton.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1664693459 source:c:\users\manuel\desktop\proyecto\lab2game\estados\estadojuego.cpp
+	"estadojuego.h"
+
+1664690936 c:\users\manuel\desktop\proyecto\lab2game\estados\estadojuego.h
+	"estadobase.h"
+	"jugador.h"
+
+1664693455 source:c:\users\manuel\desktop\proyecto\lab2game\estados\estadomenuprincipal.cpp
+	"estadomenuprincipal.h"
+	<sstream>
+
+1664693461 c:\users\manuel\desktop\proyecto\lab2game\estados\estadomenuprincipal.h
+	"estadobase.h"
+	"estadojuego.h"
+	"estadoeditor.h"
+	"../Utilidades/boton.h"
+
+1664693135 source:c:\users\manuel\desktop\proyecto\lab2game\utilidades\boton.cpp
+	"boton.h"
+
+1664692477 source:c:\users\manuel\desktop\proyecto\lab2game\componentes\hitbox.cpp
+	"hitbox.h"
 
