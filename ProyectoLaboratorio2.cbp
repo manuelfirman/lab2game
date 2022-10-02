@@ -65,6 +65,10 @@
 			<Add option="-std=c++14" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Componentes/animacion.cpp" />
+		<Unit filename="Componentes/animacion.h" />
+		<Unit filename="Componentes/hitbox.cpp" />
+		<Unit filename="Componentes/hitbox.h" />
 		<Unit filename="Componentes/movimiento.cpp" />
 		<Unit filename="Componentes/movimiento.h" />
 		<Unit filename="Entidades/entidades.cpp" />
@@ -73,19 +77,18 @@
 		<Unit filename="Entidades/jugador.h" />
 		<Unit filename="Estados/estadobase.cpp" />
 		<Unit filename="Estados/estadobase.h" />
+		<Unit filename="Estados/estadoeditor.cpp" />
+		<Unit filename="Estados/estadoeditor.h" />
 		<Unit filename="Estados/estadojuego.cpp" />
 		<Unit filename="Estados/estadojuego.h" />
 		<Unit filename="Estados/estadomenuprincipal.cpp" />
 		<Unit filename="Estados/estadomenuprincipal.h" />
 		<Unit filename="Utilidades/boton.cpp" />
 		<Unit filename="Utilidades/boton.h" />
-		<Unit filename="include/animacion.h" />
 		<Unit filename="include/game.h" />
 		<Unit filename="include/player.h" />
 		<Unit filename="include/ventana.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="recursos/boton.h" />
-		<Unit filename="src/animacion.cpp" />
 		<Unit filename="src/game.cpp" />
 		<Unit filename="src/player.cpp" />
 		<Unit filename="src/ventana.cpp" />

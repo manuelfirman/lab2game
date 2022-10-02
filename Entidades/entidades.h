@@ -1,7 +1,9 @@
 #ifndef ENTIDADES_H
 #define ENTIDADES_H
 
+#include "hitbox.h"
 #include "movimiento.h"
+#include "animacion.h"
 
 class Entidades
 {
@@ -13,7 +15,8 @@ class Entidades
     protected: // Atributos
         sf::Sprite _sprite;
 
-        Movimiento* movimiento;
+        Movimiento* _movimiento;
+        Animacion* _animacion;
 
 
 
@@ -22,11 +25,15 @@ class Entidades
         virtual ~Entidades();
         // Funciones de componentes
         void setTextura(sf::Texture& textura);
+
+        /// Componentes
         void crearComponenteMovimiento(float velocidadMaxima, float aceleracion, float desaceleracion);
+        void crearComponenteAnimacion(sf::Texture& textura);
 
         /// Overriders
         virtual void setPosicion(const float x, const float y);
         virtual void mover(const float x, const float y, const float& DT);
+
         virtual void actualizar(const float& DT);
         virtual void renderizar(sf::RenderTarget* target);
 };

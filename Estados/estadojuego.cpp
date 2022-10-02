@@ -18,14 +18,14 @@ void EstadoJuego::iniciarTexturas()
 {
     sf::Texture aux;
 
-    if(!_texturas["JUGADOR_QUIETO"].loadFromFile("recursos/img/Mushroom.png")){
-       std::cout << "ERROR:EstadoJuego_iniciarTexturas_CargaTexturaPersonaje" << std::endl;
+    if(!_texturas["PLANTILLA_JUGADOR"].loadFromFile("recursos/img/personaje/1.png")){
+       std::cout << "ERROR: EstadoJuego_iniciarTexturas_CargaTexturaPersonaje" << std::endl;
     }
 }
 
 void EstadoJuego::iniciarJugadores()
 {
-    player = new Jugador(0,0, _texturas["JUGADOR_QUIETO"]);
+    player = new Jugador(0,0, _texturas["PLANTILLA_JUGADOR"]);
 }
 
 /// --------------------- CONSTRUCTOR / DESTRUCTOR ---------------------

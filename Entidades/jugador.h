@@ -16,6 +16,8 @@ class Jugador : public Entidades
     public:
         Jugador(float x, float y, sf::Texture& textura);
         ~Jugador();
+
+        void actualizar(const float& DT);
 };
 
 #endif // JUGADOR_H

@@ -52,6 +52,9 @@ void EstadoMenuPrincipal::iniciarBotones()
 
     _boton["ESTADO_SALIR"] = new Boton(sf::Vector2f(200,50), "SALIR", 20, _fuenteBoton, sf::Color(48,132,70,155), sf::Color(189,236,182,155), sf::Color(208,208,208,155), sf::Color(sf::Color::Black));
     _boton["ESTADO_SALIR"]->setPosicion(sf::Vector2f((_ventana->getSize().x / 2.f) - 100, 640));
+
+    _boton["ESTADO_EDITOR"] = new Boton(sf::Vector2f(200,50), "EDITOR", 20, _fuenteBoton, sf::Color(48,132,70,155), sf::Color(189,236,182,155), sf::Color(208,208,208,155), sf::Color(sf::Color::Black));
+    _boton["ESTADO_EDITOR"]->setPosicion(sf::Vector2f((_ventana->getSize().x / 2.f) - 100, 800));
 }
 
 /// --------------------- CONSTRUCTOR / DESTRUCTOR ---------------------
@@ -93,7 +96,8 @@ void EstadoMenuPrincipal::actualizarBotones()
     if(_boton["ESTADO_CARGAR"]->getClick());
 
 
-    if(_boton["ESTADO_OPCIONES"]->getClick());
+    if(_boton["ESTADO_OPCIONES"]->getClick())
+        _estado->push(new EstadoEditor(_ventana, _teclasSoportadas, _estado));
 
 
     if(_boton["ESTADO_SALIR"]->getClick())
@@ -130,16 +134,13 @@ void EstadoMenuPrincipal::renderizar(sf::RenderTarget* target)
 
 
     /// VER POSICION MOUSE AL LADO DE LA FLECHA (QUITAR DESPUES)
-    sf::Text textoMouse;
-    textoMouse.setPosition(posMouseVista.x, posMouseVista.y - 50);
-    textoMouse.setFont(_fuenteBoton);
-    textoMouse.setCharacterSize(12);
-    std::stringstream ss;
-    ss << posMouseVista.x << " " << posMouseVista.y;
-    textoMouse.setString(ss.str());
-
-    target->draw(textoMouse);
-
-
-
+//    sf::Text textoMouse;
+//    textoMouse.setPosition(posMouseVista.x, posMouseVista.y - 50);
+//    textoMouse.setFont(_fuenteBoton);
+//    textoMouse.setCharacterSize(12);
+//    std::stringstream ss;
+//    ss << posMouseVista.x << " " << posMouseVista.y;
+//    textoMouse.setString(ss.str());
+//
+//    target->draw(textoMouse);
 }

@@ -2,7 +2,8 @@
 /// --------------------- INICIALIZACIONES --------------------------
 void Entidades::iniciarVariables()
 {
-    movimiento = NULL;
+    _movimiento = NULL;
+    _animacion = NULL;
 }
 
 /// --------------------- CONSTRUCTOR / DESTRUCTOR ---------------------
@@ -15,7 +16,8 @@ Entidades::Entidades()
 
 Entidades::~Entidades()
 {
-    delete &_sprite;
+    delete _movimiento;
+    delete _animacion;
 }
 
 
@@ -24,13 +26,19 @@ Entidades::~Entidades()
 void Entidades::setTextura(sf::Texture& textura)
 {
     _sprite.setTexture(textura);
-
 }
+
 
 void Entidades::crearComponenteMovimiento(float velocidadMaxima, float aceleracion, float desaceleracion)
 {
-    movimiento = new Movimiento(_sprite, velocidadMaxima, aceleracion, desaceleracion);
+    _movimiento = new Movimiento(_sprite, velocidadMaxima, aceleracion, desaceleracion);
 }
+
+void Entidades::crearComponenteAnimacion(sf::Texture& textura)
+{
+    _animacion = new Animacion(_sprite, textura);
+}
+
 
 void Entidades::setPosicion(const float x, const float y)
 {
@@ -39,9 +47,9 @@ void Entidades::setPosicion(const float x, const float y)
 
 void Entidades::mover(const float dir_x, const float dir_y, const float& DT)
 {
-    if(this->movimiento){
+    if(this->_movimiento){
     // Recibe direcciones (x y)
-        movimiento->mover(dir_x, dir_y, DT); // setea velocidad
+        _movimiento->mover(dir_x, dir_y, DT); // setea velocidad
     }
 }
 
@@ -49,9 +57,8 @@ void Entidades::mover(const float dir_x, const float dir_y, const float& DT)
 /// --------------------- ACTUALIZACIONES --------------------------
 void Entidades::actualizar(const float& DT)
 {
-    if(movimiento){
-        movimiento->actualizar(DT);
-    }
+
+
 }
 
 /// --------------------- RENDERIZAR --------------------------

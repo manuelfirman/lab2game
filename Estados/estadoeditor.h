@@ -1,18 +1,13 @@
-#ifndef ESTADOMENUPRINCIPAL_H
-#define ESTADOMENUPRINCIPAL_H
-#include "estadobase.h"
-#include "estadojuego.h"
-#include "estadoeditor.h"
-#include "../Utilidades/boton.h"
+#ifndef EDITORESTADO_H
+#define EDITORESTADO_H
 
-class EstadoMenuPrincipal : public EstadoBase
+#include <estadobase.h>
+#include <../Utilidades/boton.h>
+
+class EstadoEditor : public EstadoBase
 {
     private: // Atributos
-        sf::Texture _texturaFondoMenu;
-        sf::RectangleShape _fondoMenu;
-        sf::Font _fuenteMenu;
         sf::Font _fuenteBoton;
-
         std::map<std::string, Boton*> _boton;
 
     private: // Metodos
@@ -23,8 +18,8 @@ class EstadoMenuPrincipal : public EstadoBase
         void iniciarBotones();
 
     public:
-        EstadoMenuPrincipal(sf::RenderWindow* ventana, std::map<std::string, int>* teclasSoportadas, std::stack<EstadoBase*>* estado);
-        ~EstadoMenuPrincipal();
+        EstadoEditor(sf::RenderWindow* ventana, std::map<std::string, int>* teclasSoportadas, std::stack<EstadoBase*>* estado);
+        ~EstadoEditor();
 
         void actualizarBotones();
         void renderBotones(sf::RenderTarget* target);
@@ -35,4 +30,4 @@ class EstadoMenuPrincipal : public EstadoBase
         void renderizar(sf::RenderTarget* target = NULL);
 };
 
-#endif // ESTADOMENUPRINCIPAL_H
+#endif // EDITORESTADO_H

@@ -18,6 +18,38 @@ const sf::Vector2f& Movimiento::getVelocidad() const
     return _velocidad;
 }
 
+const bool Movimiento::getEstadoMov(const int estado) const
+{
+    switch(estado){
+        case QUIETO:
+                if(_velocidad.x == 0.f && _velocidad.y == 0.f) return true;
+                else return false;
+            break;
+        case MOVIENDO:
+                if(_velocidad.x != 0.f || _velocidad.y != 0.f) return true;
+                else return false;
+            break;
+        case MOV_IZQUIERDA:
+                if(_velocidad.x < 0.f) return true;
+                else return false;
+            break;
+        case MOV_DERECHA:
+                if(_velocidad.x > 0.f) return true;
+                else return false;
+            break;
+        case MOV_ABAJO:
+                if(_velocidad.y > 0.f) return true;
+                else return false;
+            break;
+        case MOV_ARRIBA:
+            if(_velocidad.y < 0.f) return true;
+            else return false;
+            break;
+    }
+
+
+}
+
 void Movimiento::mover(const float dir_x, const float dir_y, const float& DT)
 {
     _velocidad.x += _aceleracion * dir_x; /// aceleracion x
@@ -27,48 +59,55 @@ void Movimiento::mover(const float dir_x, const float dir_y, const float& DT)
 
 void Movimiento::actualizar(const float& DT)
 {
+    /// Limite velocidad maxima Derecha
     if(_velocidad.x > 0.f){
         if(_velocidad.x > _velocidadMax){
-            _velocidad.x = _velocidadMax; // Limitar velocidad
+            _velocidad.x = _velocidadMax;
         }
-
-        _velocidad.x -= _desaceleracion; /// Desacelerar derecha
+        /// Desaceleracion Derecha
+        _velocidad.x -= _desaceleracion;
 
         if(_velocidad.x < 0.f){
             _velocidad.x = 0.f; // Detener
         }
     }
 
+    /// Limite velocidad maxima Izquierda
     if(_velocidad.x < 0.f){
         if(_velocidad.x < -_velocidadMax){
-            _velocidad.x = -_velocidadMax; // Limitar velocidad
+            _velocidad.x = -_velocidadMax;
         }
-        _velocidad.x += _desaceleracion; /// Desacelerar izquierda
+         /// Desaceleracion Izquierda
+        _velocidad.x += _desaceleracion;
 
         if(_velocidad.x > 0.f){
             _velocidad.x = 0.f; // Detener
         }
     }
 
+    /// Limite velocidad Abajo
     if(_velocidad.y > 0.f){
-        if(_velocidad.y > _velocidadMax){ // Limitar velocidad
+        if(_velocidad.y > _velocidadMax){
             _velocidad.y = _velocidadMax;
         }
-        _velocidad.y -= _desaceleracion; /// Desacelerar abajo
+        /// Desaceleracion hacia abajo
+        _velocidad.y -= _desaceleracion;
 
         if(_velocidad.y < 0.f){
             _velocidad.y = 0.f; // Detener
         }
     }
 
+    /// Limite velocidad Arriba
     if(_velocidad.y < 0.f){
         if(_velocidad.y < -_velocidadMax){
-            _velocidad.y = -_velocidadMax; // Limitar velocidad
+            _velocidad.y = -_velocidadMax;
         }
-        _velocidad.y += _desaceleracion; /// Desacelerar arriba
+        // Desaceleracion hacia arriba
+        _velocidad.y += _desaceleracion;
 
         if(_velocidad.y > 0.f ){
-            _velocidad.y = 0.f; // Detener
+            _velocidad.y = 0.f;
         }
     }
 

@@ -14,6 +14,8 @@
 
 #include <fstream>
 
+enum estado_movimiento{QUIETO = 0, MOVIENDO, MOV_IZQUIERDA, MOV_DERECHA, MOV_ABAJO, MOV_ARRIBA};
+
 class Movimiento
 {
     private: // Atributos
@@ -28,6 +30,8 @@ class Movimiento
         virtual ~Movimiento();
 
         const sf::Vector2f& getVelocidad() const;
+
+        const bool getEstadoMov(const int estado) const;
 
         void mover(const float dir_x, const float dir_y, const float& DT);
         void actualizar(const float& DT);
