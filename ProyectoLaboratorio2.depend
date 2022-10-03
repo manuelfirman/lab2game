@@ -1123,25 +1123,26 @@
 1664087734 d:\documentos\programacion\proyectolaboratorio2\estados\estadobase.h
 	"entidades.h"
 
-1664685093 source:d:\documentos\programacion\proyectolaboratorio2\estados\estadojuego.cpp
+1664759632 source:d:\documentos\programacion\proyectolaboratorio2\estados\estadojuego.cpp
 	"estadojuego.h"
 
 1664087723 d:\documentos\programacion\proyectolaboratorio2\estados\estadojuego.h
 	"estadobase.h"
 	"jugador.h"
 
-1664685258 source:d:\documentos\programacion\proyectolaboratorio2\entidades\entidades.cpp
+1664759632 source:d:\documentos\programacion\proyectolaboratorio2\entidades\entidades.cpp
 	"entidades.h"
 
-1664683148 d:\documentos\programacion\proyectolaboratorio2\entidades\entidades.h
+1664759632 d:\documentos\programacion\proyectolaboratorio2\entidades\entidades.h
+	"hitbox.h"
 	"movimiento.h"
 	"animacion.h"
 
-1664690015 source:d:\documentos\programacion\proyectolaboratorio2\estados\estadomenuprincipal.cpp
+1664759632 source:d:\documentos\programacion\proyectolaboratorio2\estados\estadomenuprincipal.cpp
 	"estadomenuprincipal.h"
 	<sstream>
 
-1664689985 d:\documentos\programacion\proyectolaboratorio2\estados\estadomenuprincipal.h
+1664759632 d:\documentos\programacion\proyectolaboratorio2\estados\estadomenuprincipal.h
 	"estadobase.h"
 	"estadojuego.h"
 	"estadoeditor.h"
@@ -1154,20 +1155,20 @@
 1664083687 source:d:\documentos\programacion\proyectolaboratorio2\recursos\boton.cpp
 	"boton.h"
 
-1664080256 source:d:\documentos\programacion\proyectolaboratorio2\utilidades\boton.cpp
+1664759632 source:d:\documentos\programacion\proyectolaboratorio2\utilidades\boton.cpp
 	"boton.h"
 
-1664080234 d:\documentos\programacion\proyectolaboratorio2\utilidades\boton.h
+1664759632 d:\documentos\programacion\proyectolaboratorio2\utilidades\boton.h
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1664688799 source:d:\documentos\programacion\proyectolaboratorio2\entidades\jugador.cpp
+1664769488 source:d:\documentos\programacion\proyectolaboratorio2\entidades\jugador.cpp
 	"jugador.h"
 
-1664683460 d:\documentos\programacion\proyectolaboratorio2\entidades\jugador.h
+1664769023 d:\documentos\programacion\proyectolaboratorio2\entidades\jugador.h
 	<Entidades.h>
 
-1664688140 d:\documentos\programacion\proyectolaboratorio2\componentes\movimiento.h
+1664763168 d:\documentos\programacion\proyectolaboratorio2\componentes\movimiento.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -1180,13 +1181,13 @@
 	<iostream>
 	<fstream>
 
-1664688141 source:d:\documentos\programacion\proyectolaboratorio2\componentes\movimiento.cpp
+1664763159 source:d:\documentos\programacion\proyectolaboratorio2\componentes\movimiento.cpp
 	"movimiento.h"
 
-1664688736 source:d:\documentos\programacion\proyectolaboratorio2\componentes\animacion.cpp
+1664772006 source:d:\documentos\programacion\proyectolaboratorio2\componentes\animacion.cpp
 	"animacion.h"
 
-1664688820 d:\documentos\programacion\proyectolaboratorio2\componentes\animacion.h
+1664772485 d:\documentos\programacion\proyectolaboratorio2\componentes\animacion.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -1194,11 +1195,11 @@
 	<iostream>
 	<map>
 
-1664690042 d:\documentos\programacion\proyectolaboratorio2\estados\estadoeditor.h
+1664759632 d:\documentos\programacion\proyectolaboratorio2\estados\estadoeditor.h
 	<estadobase.h>
 	<../Utilidades/boton.h>
 
-1664690042 source:d:\documentos\programacion\proyectolaboratorio2\estados\estadoeditor.cpp
+1664759632 source:d:\documentos\programacion\proyectolaboratorio2\estados\estadoeditor.cpp
 	"estadoeditor.h"
 	<sstream>
 
@@ -1293,4 +1294,17 @@
 
 1664692477 source:c:\users\manuel\desktop\proyecto\lab2game\componentes\hitbox.cpp
 	"hitbox.h"
+
+1664759632 source:d:\documentos\programacion\proyectolaboratorio2\componentes\hitbox.cpp
+	"hitbox.h"
+
+1664759632 d:\documentos\programacion\proyectolaboratorio2\componentes\hitbox.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<ctime>
+	<cstdlib>
+	<iostream>
+	<fstream>
 

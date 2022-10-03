@@ -13,6 +13,11 @@ Movimiento::~Movimiento()
     //dtor
 }
 
+const float& Movimiento::getVelocidadMax() const
+{
+    return _velocidadMax;
+}
+
 const sf::Vector2f& Movimiento::getVelocidad() const
 {
     return _velocidad;

@@ -30,6 +30,7 @@ class Movimiento
         virtual ~Movimiento();
 
         const sf::Vector2f& getVelocidad() const;
+        const float& getVelocidadMax() const;
 
         const bool getEstadoMov(const int estado) const;
 

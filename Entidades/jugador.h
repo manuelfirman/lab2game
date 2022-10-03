@@ -7,6 +7,7 @@
 class Jugador : public Entidades
 {
     private: // Atributos
+        bool _atacando;
 
 
     private: // Metodos
