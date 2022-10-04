@@ -18,6 +18,8 @@ class Jugador : public Entidades
         Jugador(float x, float y, sf::Texture& textura);
         ~Jugador();
 
+        void actualizarAtaque(const float& DT);
+        void actualizarAnimacion(const float& DT);
         void actualizar(const float& DT);
 };
 

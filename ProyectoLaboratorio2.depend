@@ -1162,10 +1162,10 @@
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1664769488 source:d:\documentos\programacion\proyectolaboratorio2\entidades\jugador.cpp
+1664772599 source:d:\documentos\programacion\proyectolaboratorio2\entidades\jugador.cpp
 	"jugador.h"
 
-1664769023 d:\documentos\programacion\proyectolaboratorio2\entidades\jugador.h
+1664849322 d:\documentos\programacion\proyectolaboratorio2\entidades\jugador.h
 	<Entidades.h>
 
 1664763168 d:\documentos\programacion\proyectolaboratorio2\componentes\movimiento.h
@@ -1184,7 +1184,7 @@
 1664763159 source:d:\documentos\programacion\proyectolaboratorio2\componentes\movimiento.cpp
 	"movimiento.h"
 
-1664772006 source:d:\documentos\programacion\proyectolaboratorio2\componentes\animacion.cpp
+1664772554 source:d:\documentos\programacion\proyectolaboratorio2\componentes\animacion.cpp
 	"animacion.h"
 
 1664772485 d:\documentos\programacion\proyectolaboratorio2\componentes\animacion.h

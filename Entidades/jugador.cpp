@@ -32,6 +32,9 @@ Jugador::Jugador(float x, float y, sf::Texture& textura)
 
     // ANIMACIONES ATAQUE
     _animacion->agregarAnimacion("ATAQUE_ARRIBA", 10.f, 1, 12, 5, 12, 64, 64);
+    _animacion->agregarAnimacion("ATAQUE_IZQUIERDA", 10.f, 1, 13, 5, 13, 64, 64);
+    _animacion->agregarAnimacion("ATAQUE_ABAJO", 10.f, 1, 14, 5, 14, 64, 64);
+    _animacion->agregarAnimacion("ATAQUE_DERECHA", 10.f, 1, 15, 5, 15, 64, 64);
 
 
 }
@@ -41,20 +44,43 @@ Jugador::~Jugador()
     //dtor
 }
 
-void Jugador::actualizar(const float& DT)
+void Jugador::actualizarAtaque(const float& DT)
 {
-    _movimiento->actualizar(DT);
-
     if(sf::Mouse::isButtonPressed(sf::Mouse::Right)){
         _atacando = true;
     }
 
     if(_atacando){
-        if(_animacion->play("ATAQUE_ARRIBA", DT, true)){
+        if(_animacion->play("ATAQUE_ABAJO", DT, true)){
             _atacando = false;
+
         }
+
     }
 
+//    if(_atacando){
+//        if(_movimiento->getEstadoMov(MOV_ARRIBA)){
+//            if(_animacion->play("ATAQUE_ARRIBA", DT, true)){
+//                _atacando = false;
+//            }
+//        } else if(_movimiento->getEstadoMov(MOV_ABAJO)){
+//            if(_animacion->play("ATAQUE_ABAJO", DT, true)){
+//                _atacando = false;
+//            }
+//        } else if(_movimiento->getEstadoMov(MOV_DERECHA)){
+//            if(_animacion->play("ATAQUE_DERECHA", DT, true)){
+//                _atacando = false;
+//            }
+//        }else if(_movimiento->getEstadoMov(MOV_IZQUIERDA)){
+//            if(_animacion->play("ATAQUE_IZQUIERDA", DT, true)){
+//                _atacando = false;
+//            }
+//        }
+//    }
+}
+
+void Jugador::actualizarAnimacion(const float& DT)
+{
     if(_movimiento->getEstadoMov(QUIETO))
         _animacion->play("CAMINAR_QUIETO", DT);
     else if(_movimiento->getEstadoMov(MOV_DERECHA))
@@ -65,8 +91,15 @@ void Jugador::actualizar(const float& DT)
         _animacion->play("CAMINAR_ABAJO", DT, _movimiento->getVelocidad().y, _movimiento->getVelocidadMax());
     else if(_movimiento->getEstadoMov(MOV_ARRIBA))
         _animacion->play("CAMINAR_ARRIBA", DT, _movimiento->getVelocidad().y, _movimiento->getVelocidadMax());
+}
 
+void Jugador::actualizar(const float& DT)
+{
+    _movimiento->actualizar(DT);
 
+    actualizarAtaque(DT);
+
+    actualizarAnimacion(DT);
 
     _hitbox->actualizar();
 }

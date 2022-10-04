@@ -23,6 +23,7 @@
 					<Add directory="Estados" />
 					<Add directory="Recursos" />
 					<Add directory="Componentes" />
+					<Add directory="Tile" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-system" />
@@ -48,6 +49,7 @@
 					<Add directory="Estados" />
 					<Add directory="Recursos" />
 					<Add directory="Componentes" />
+					<Add directory="Tile" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -83,6 +85,10 @@
 		<Unit filename="Estados/estadojuego.h" />
 		<Unit filename="Estados/estadomenuprincipal.cpp" />
 		<Unit filename="Estados/estadomenuprincipal.h" />
+		<Unit filename="Estados/menupausa.cpp" />
+		<Unit filename="Estados/menupausa.h" />
+		<Unit filename="Tile/tile.cpp" />
+		<Unit filename="Tile/tile.h" />
 		<Unit filename="Utilidades/boton.cpp" />
 		<Unit filename="Utilidades/boton.h" />
 		<Unit filename="include/game.h" />
